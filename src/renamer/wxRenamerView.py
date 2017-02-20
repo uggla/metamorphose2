@@ -130,18 +130,19 @@ class IntroTextPanel(wx.Panel):
         # create info text of available operations
         # Find largest panel, use it to set this panel size
         txt = ''
-        txtSize = (0, 0)
-        for i in range(prnt.availableOperations.GetItemCount()):
-            op = prnt.availableOperations.GetItemText(i)
-            txt += "%s  :  %s\n\n" % (op, operations.defs[op][1])
+        #txtSize = (0, 0)
+        txtSize = (1000, 500)
+        #for i in range(prnt.availableOperations.GetItemCount()):
+        #    op = prnt.availableOperations.GetItemText(i)
+        #    txt += "%s  :  %s\n\n" % (op, operations.defs[op][1])
 
-            # create temporary instance of panel to get size
-            op = operations.defs[op][0]
-            opPanel = getattr(operations, op).OpPanel(prnt, main)
-            size = opPanel.GetSizeTuple()
-            if size > txtSize:
-                txtSize = size
-            opPanel.Destroy()
+        #    # create temporary instance of panel to get size
+        #    op = operations.defs[op][0]
+        #    opPanel = getattr(operations, op).OpPanel(prnt, main)
+        #    size = opPanel.GetSizeTuple()
+        #    if size > txtSize:
+        #        txtSize = size
+        #    opPanel.Destroy()
 
         fontParams = app.fontParams
         fontSize = fontParams['size']
